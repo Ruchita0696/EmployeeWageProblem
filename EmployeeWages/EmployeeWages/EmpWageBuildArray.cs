@@ -1,23 +1,23 @@
-﻿using System;
+﻿using EmployeeWages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EmployeeWages
+namespace Employees
 {
-    public class EmpWageBuilderArray
+    public class EmpWageBuildArray
     {
         public const int IS_FULL_TIME = 1, IS_PART_TIME = 2;
 
         private int numOfCompany = 0;
         private CompanyEmpWage[] companyEmpWageArray;
 
-        public EmpWageBuilderArray()
+        public EmpWageBuildArray()
         {
             this.companyEmpWageArray = new CompanyEmpWage[5];
         }
-
         public void addcompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
         {
             companyEmpWageArray[this.numOfCompany] = new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
@@ -31,6 +31,7 @@ namespace EmployeeWages
                 Console.WriteLine(this.companyEmpWageArray[i].toString());
             }
         }
+
         private int computeEmpWage(CompanyEmpWage companyEmpWage)
         {
             // Variables
@@ -60,3 +61,4 @@ namespace EmployeeWages
         }
     }
 }
+
