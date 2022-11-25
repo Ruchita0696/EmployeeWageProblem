@@ -13,16 +13,20 @@ namespace Employees
 
         private int numOfCompany = 0;
         private CompanyEmpWage[] companyEmpWageArray;
+        private List<CompanyEmpWage> companyEmpWageArrayList;
+        private List<CompanyEmpWage> companyEmpWageList;
 
         public EmpWageBuildArray()
         {
             this.companyEmpWageArray = new CompanyEmpWage[5];
+            companyEmpWageArrayList = new List<CompanyEmpWage>();
         }
         public void addcompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
         {
-            companyEmpWageArray[this.numOfCompany] = new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
+            companyEmpWageArrayList.Add(new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth));
             numOfCompany++;
         }
+    
         public void computeEmpWage()
         {
             for (int i = 0; i < numOfCompany; i++)
